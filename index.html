@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recette</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="./scripts/idb.js"></script>
+    <script src="main.js"></script>
+    <script src="push.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-block">
+                <img src="assets/images/logo.png" alt="logo" class="logo">
+            </div>
+            <div class="action-block">
+                <nav class="menu">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/app/add-recipe.html">Create</a></li>
+                        <li><a href="/app/faq.html">FAQ</a></li>
+                        <li onclick="askPermission()">Enable Notification</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        
+    </header>
+    <div class="main" id="home">
+
+    </div>
+    <footer>
+        <div>Copyright &copy; 2019 rinesh.in</div>
+    </footer>  
+
+  
+    
+    <script src="utility.js"></script>
+    <script src="index.js"></script>
+
+</body>
+</html>

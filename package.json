@@ -1,0 +1,29 @@
+{
+  "name": "recette",
+  "version": "0.0.1",
+  "description": "Recipe book (Made by PWA)",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rineshgkurup/pwa.git"
+  },
+  "keywords": [
+    "PWA"
+  ],
+  "author": "Rinesh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rineshgkurup/pwa/issues"
+  },
+  "homepage": "https://github.com/rineshgkurup/pwa#readme",
+  "devDependencies": {
+    "http-server": "^0.12.1"
+  },
+  "dependencies": {
+    "idb": "^5.0.1"
+  }
+}

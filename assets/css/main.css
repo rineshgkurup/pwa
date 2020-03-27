@@ -1,0 +1,184 @@
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    display: grid;
+    grid-template-rows: 40px 1fr 40px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+header{
+    background-color: #ffffff;
+    box-shadow: 1px 3px 23px 0px rgba(0, 0, 0, 0.2)
+}
+
+.header-top{
+    display: flex;
+    align-items:center;
+    height: 40px;
+}
+
+.logo{
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+}
+
+.logo-block{
+    width: 120px;
+}
+
+.action-block{
+    align-self: center;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+nav ul, nav li{
+    list-style: none;
+    padding:0px;
+    margin:0px;
+}
+
+
+.menu ul{
+    display: flex;
+    margin-left: 20px;
+    color: #000;
+}
+
+.menu ul li{
+    margin-right: 13px;
+    font-size: 13px;
+}
+
+
+nav.menu ul li:last-child{
+    margin-right: 10px;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    color: #999;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+.main{
+    padding: 20px;
+    /* justify-content: space-between; */
+    background-color: rgba(153, 153, 153, 0.11);
+}
+
+#home{
+    display:flex;
+    flex-wrap:wrap;
+    padding: 10px;
+    /* justify-content: space-between; */
+    background-color: rgba(153, 153, 153, 0.11);
+}
+
+footer{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 13px;
+    background-color: #ffffff;
+}
+
+
+.card{
+    height: 320px;
+    /* min-width: 200px; */
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 1rem;;
+    
+}
+
+.card-item{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media(min-width:40rem){
+    .card{
+        width: 50%;
+    }
+    
+}
+@media(min-width:56rem){
+    .card{
+        width: 33.33%;
+    }
+}
+
+.image-container{
+    height: 200px;
+    width: 100%;
+    background-size: cover;
+    background-color: rgba(153, 153, 153, 0.42);
+}
+
+.caption-container{
+    padding: 10px;
+    flex:1 1 auto;
+    align-items: center;
+    display: flex;
+    color: #999999;
+}
+
+main{
+    padding: 20px;
+}
+
+main textarea{
+    width: 100%;
+    height: 400px;
+}
+
+
+article{
+    font-style: italic;
+    color:#cdcdcd;
+}
+
+input{
+    width: 100%;
+    padding: 10px;
+    border:1px solid #cdcdcd;
+}
+
+.form-control{
+    margin: 20px 0px;
+}
+
+.form-control label{
+    margin-bottom:4px;
+    font-size: 13px;
+    display: block;
+}
+
+.submit-button{
+    display: flex;
+    justify-content: flex-end;
+}
+
+input.dirty:not(:focus):invalid{
+    border-color: red;
+}
+
+input.dirty:not(:focus):valid{
+    border-color: green;
+}

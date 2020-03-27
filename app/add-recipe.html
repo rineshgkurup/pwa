@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recette</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../scripts/idb.js"></script>
+    <script src="../main.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-block">
+                <img src="../assets/images/logo.png" alt="logo" class="logo">
+            </div>
+            <div class="action-block">
+                <nav class="menu">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/app/add-recipe.html">Create</a></li>
+                        <li><a href="/app/faq.html">FAQ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        
+    </header>
+    <div class="main">
+
+        <h2>Add Your Recipe</h2>
+        <article>“If more of us valued food and cheer and song above hoarded gold, it would be a merrier world."</article>
+        <hr/>
+        <form id="recipe-form">
+            <div class="form-control">
+                <input type="text" name="name" id="name" placeholder="Recipe Name" minlength="5" required>
+            </div>
+
+            <div class="form-control">
+                <input type="url" name="image" id="image" placeholder="Recipe image" >
+            </div>
+            <div class="form-control submit-button">
+                <button type="submit">Add Recipe</button>
+            </div>
+        </form>
+
+        
+
+    </div>
+    <footer>
+        <div>Copyright &copy; 2019 rinesh.in</div>
+    </footer> 
+
+    <script src="../utility.js"></script>
+    <script src="../add-recipe.js"></script>
+</body>
+</html>
