@@ -10,7 +10,7 @@ function createRecipeCard(data){
 
     var imgContainer = document.createElement('div');
     imgContainer.className = 'image-container';
-    imgContainer.style.backgroundImage = 'url('+data.image +')';
+    imgContainer.style.backgroundImage = 'url(http://localhost:8091'+data.image +')';
     // imgContainer.append(img);
 
     var captionContainer = document.createElement('div');
@@ -26,6 +26,7 @@ function createRecipeCard(data){
     container.append(cardContainer);
 }
 
+function initHome(){
     if(navigator.onLine){
         var domain = window.location.protocol + '//' + window.location.hostname;
         fetch(domain+":8091/recipes")
@@ -34,6 +35,13 @@ function createRecipeCard(data){
         })
         .then(function(res){
             let result = res;
+            var root = document.getElementById('root');
+
+            var container = document.createElement('div');
+            container.id = "home";
+            container.className = "home";
+            root.append(container);
+
             result.forEach(data => {
                 createRecipeCard(data);
             });
@@ -52,5 +60,19 @@ function createRecipeCard(data){
             })
         }
     }
+}
+    
 
 
+function route(to){
+    if(to == "AddRecipe"){
+        document.getElementById('root').innerHTML = loadAddRecipe();
+        initAddRecipe();
+    } else {
+        destroyAddRecipe();
+        document.getElementById('root').innerHTML = '';
+        initHome();
+    }
+}
+
+route("Home");

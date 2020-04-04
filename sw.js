@@ -57,19 +57,21 @@ self.addEventListener('activate', function(event){
 
 
 self.addEventListener('fetch', (event) => {
-    if(event.request.url === 'http://localhost:8091/recipes'){
+    if(event.request.url.startsWith('http://localhost:8091')){
         event.respondWith(
             fetch(event.request)
             .then(function(res){
-                var clonedResponse = res.clone();
-                db.clear('recipes').then(function(){
-                    clonedResponse.json().then((data) => {
-                        for(var key in data){
-                            console.log(data[key]);
-                            db.add("recipes", data[key])
-                        }
-                    })
-                });
+                if(event.request.url === 'http://localhost:8091/recipes'){
+                    var clonedResponse = res.clone();
+                    db.clear('recipes').then(function(){
+                        clonedResponse.json().then((data) => {
+                            for(var key in data){
+                                db.add("recipes", data[key]);
+                            }
+                        })
+                    });
+                }
+                
                 return res;
             })
         );
@@ -96,12 +98,15 @@ self.addEventListener('fetch', (event) => {
     console.log('called syncRecipe');
     db.getAll('sync-recipe').then(function(idbData){
         for(var key in idbData){
+            var data = new FormData();
+            data.append('name', idbData[key].name);
+            data.append('file', idbData[key].image);
             fetch("http://localhost:8091/recipes", {
                 method:'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(idbData[key])
+                // headers: {
+                //     'Content-Type': 'application/json',
+                // },
+                body: data
             }).then(function(res){
                return res.json();
             }).then(function(data){

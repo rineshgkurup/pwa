@@ -23,9 +23,10 @@ const db = {
         return (await dbPromise).get(objectStoreName, key);
     },
     async add(objectStoreName, data){
-        const tx = (await dbPromise).transaction(objectStoreName, 'readwrite');
-        await tx.store.add(data)
-        await tx.done;
+        // const tx = (await dbPromise).transaction(objectStoreName, 'readwrite');
+        // await tx.store.add(data)
+        // await tx.done;
+        return (await dbPromise).add(objectStoreName, data);
     },
     async put(objectStoreName, data){
         const tx = (await dbPromise).transaction(objectStoreName, 'readwrite');

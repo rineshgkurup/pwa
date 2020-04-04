@@ -55,6 +55,7 @@ nav ul, nav li{
 .menu ul li{
     margin-right: 13px;
     font-size: 13px;
+    cursor:pointer;
 }
 
 
@@ -76,12 +77,17 @@ nav.menu ul li:last-child{
     background-color: rgba(153, 153, 153, 0.11);
 }
 
-#home{
+#root{
+    height: 100%;
+    width: 100%;
+}
+
+.home{
     display:flex;
     flex-wrap:wrap;
-    padding: 10px;
+    /* padding: 10px; */
     /* justify-content: space-between; */
-    background-color: rgba(153, 153, 153, 0.11);
+    /* background-color: rgba(153, 153, 153, 0.11); */
 }
 
 footer{
@@ -181,4 +187,8 @@ input.dirty:not(:focus):invalid{
 
 input.dirty:not(:focus):valid{
     border-color: green;
+}
+
+#snapshot{
+    display:flex;
 }

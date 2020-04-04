@@ -9,6 +9,7 @@
     <script src="./scripts/idb.js"></script>
     <script src="main.js"></script>
     <script src="push.js"></script>
+    
 </head>
 <body>
 
@@ -20,9 +21,8 @@
             <div class="action-block">
                 <nav class="menu">
                     <ul>
-                        <li><a href="/index.html">Home</a></li>
-                        <li><a href="/app/add-recipe.html">Create</a></li>
-                        <li><a href="/app/faq.html">FAQ</a></li>
+                        <li onclick="route('Home')">Home</li>
+                        <li onclick="route('AddRecipe')">Create</li>
                         <li onclick="askPermission()">Enable Notification</li>
                     </ul>
                 </nav>
@@ -30,7 +30,7 @@
         </div>
         
     </header>
-    <div class="main" id="home">
+    <div class="main" id="root">
 
     </div>
     <footer>
@@ -40,6 +40,7 @@
   
     
     <script src="utility.js"></script>
+    <script src="add-recipe.js"></script>
     <script src="index.js"></script>
 
 </body>
